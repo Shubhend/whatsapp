@@ -1,11 +1,11 @@
 const knex = require('knex')({
     client: 'mysql',
     connection: {
-      host : '66.45.245.146',
-      user : 'voteonl1_1',
+      host : 'sql6.freemysqlhosting.net',
+      user : 'sql6517395',
       port:3306,
-      password : 'Shubhendu@12',
-      database : 'wp_test'
+      password : 'ZLcw4QZQvx',
+      database : 'sql6517395'
     }
   });
 
