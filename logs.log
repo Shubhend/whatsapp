@@ -28138,3 +28138,55 @@
 [2022-09-05T16:15:32.939] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
 [2022-09-05T16:15:52.969] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
 [2022-09-05T16:16:14.048] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:28:12.305] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:28:12.448] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:29:12.112] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:29:12.452] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:29:32.126] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:29:32.522] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:29:59.164] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:29:59.669] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:30:58.996] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:30:59.775] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:31:18.958] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:31:19.738] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:31:38.995] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:31:39.701] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:32:00.341] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:32:00.634] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:33:00.239] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:33:00.707] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:33:20.260] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:33:20.730] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:33:40.175] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:33:40.614] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:34:42.865] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:34:43.322] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:36:08.120] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:36:08.182] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:37:03.887] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:37:04.564] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:37:46.610] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:37:46.653] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:38:46.537] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:38:46.640] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:39:06.396] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:39:06.500] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:39:26.439] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:39:26.507] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:39:46.457] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:39:46.558] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:40:06.388] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:40:06.497] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:40:14.360] [INFO] default - Session Already: 9811235790
+[2022-09-05T17:40:14.643] [INFO] default - Session Already: 919868969659
+[2022-09-05T17:40:25.964] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:40:26.013] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T17:40:33.859] [INFO] default - Session Already: 919868969659
+[2022-09-05T17:40:33.860] [INFO] default - Session Already: 9811235790
+[2022-09-05T17:40:46.406] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
+[2022-09-05T17:40:46.447] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T18:08:14.111] [INFO] default - Session Already: 9811235790
+[2022-09-05T18:08:14.115] [INFO] default - Session Already: 919868969659
+[2022-09-05T18:08:17.736] [INFO] default - message { id: '919868969659', text: 'QR Code received, scan please!' }
+[2022-09-05T18:08:17.871] [INFO] default - message { id: '9811235790', text: 'QR Code received, scan please!' }
