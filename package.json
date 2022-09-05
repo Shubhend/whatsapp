@@ -5,7 +5,7 @@
     "node": "16.x"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "dependencies": {
     "axios": "^0.21.4",
@@ -27,7 +27,7 @@
     "express-session": "^1.17.1",
     "express-validator": "^6.10.1",
     "fs": "0.0.1-security",
-    "http": "0.0.1-security",
+    "http": "^0.0.1-security",
     "http-errors": "~1.6.3",
     "https": "^1.0.0",
     "install": "^0.13.0",
