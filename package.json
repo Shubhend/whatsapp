@@ -1,7 +1,6 @@
 {
   "name": "apiwa",
   "version": "16.17.0",
-  "private": true,
   "scripts": {
     "start": "node app.js"
   },
