@@ -5,7 +5,7 @@
     "node": "12.x"
   },
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "axios": "^0.21.4",
