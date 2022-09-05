@@ -1,6 +1,9 @@
 {
   "name": "apiwa",
   "version": "16.17.0",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start": "node app.js"
   },
