@@ -47,7 +47,7 @@ router.post('/auth', [
         request.flash('errors','Correct Email, Email Not Found');
         response.redirect('/login');
       }else{
-        const equels = request.body.password;
+        const equels = bcrypt.compare(bcrypt.hashSync(request.body.password,10),resp.password);
         if(!equels){
           loggers.info('errors','Corect, Password Wrong');
           request.flash('errors','Corect, Password Wrong');
