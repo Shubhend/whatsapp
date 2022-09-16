@@ -45,7 +45,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 p-2 embed-responsive embed-responsive-16by9">
 					<video autoplay="autoplay" loop="" controls="">
-						<source src="/video/login-a0f99e8cbba9eaa747ec23ffb30d63fe.mp4" type="video/mp4">
+						<source src="https://qa.betyphon.website/public/login-a0f99e8cbba9eaa747ec23ffb30d63fe.mp4" type="video/mp4">
 					</video>
 				</div>
 			</div>
