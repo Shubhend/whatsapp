@@ -1,4 +1,2 @@
-node_modules
-package-lock.json
-database/index.js
-.wwebjs_auth
+/vendor/
+/node_modules/
