@@ -22,10 +22,10 @@
                  <li class="{{request()->is('file-manager') ? 'active-page' : ''}}">
                     <a href="{{route('file-manager')}}" class=""><i class="material-icons-two-tone">folder</i>{{__('File Manager')}}</a>
                 </li>
-                <!--
+               
                 <x-select-device></x-select-device>
 
--->
+
                 @if(Session::has('selectedDevice'))
              
                 <li class="{{request()->is('report') ? 'active-page' : ''}}">

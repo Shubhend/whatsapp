@@ -62,7 +62,7 @@
                                                 <label for="number" class="form-label">Number ( receiver )</label>
                                                 <input type="text" name="number" class="form-control" id="number" required>
                                                 <label for="textmessage" class="form-label">Message</label>
-                                                <input type="text" name="message" class="form-control" id="textmessage" required>
+                                                <textarea type="text" name="message" class="form-control" id="textmessage" required></textarea>
                                                 <button type="submit" name="sendMsg" class="btn btn-success mt-3"><i class="material-icons-outlined">send</i>Send</button>
                                             </form>
                                         </div>

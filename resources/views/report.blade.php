@@ -38,7 +38,8 @@
                                            {{$tag->message}}
                                             </td>
                                             <td>
-                                            {{$tag->status}}
+
+                                            <?php if($tag->status){ echo "Sent";  }else {  echo "Pending"; }  ?>
 </td>
                                         </tr>
                                         @endforeach

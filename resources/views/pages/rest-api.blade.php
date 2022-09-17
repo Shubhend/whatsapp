@@ -63,7 +63,7 @@
                                         </ul>
                                         <div class="tab-content" id="pills-tabContent">
                                             <div class="tab-pane fade active show" id="textMessage" role=" tabpanel" aria-labelledby="pills-home-tab">
-                                               <div class="alert alert-dark"><strong>GET API</strong> : {{url('/')}}/public/api/text.php?api={{Auth::user()->api_key}}&sender=91XXXXXXXXXX&number=91XXXXXXXXXX&msg=WATZAPI_APP</div>
+                                               <div class="alert alert-dark"><strong>GET API</strong> : {{env('PUBLIC_API')}}/public/api/text.php?api={{Auth::user()->api_key}}&sender=91XXXXXXXXXX&number=91XXXXXXXXXX&msg=WATZAPI_APP</div>
                                                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(63, 63, 63); color: rgb(220, 220, 220);"><span class="xml"><span class="php"><span class="hljs-meta" style="color: rgb(127, 159, 127);">&lt;?php</span>
 
                                                     $data = [
@@ -75,7 +75,7 @@
                                                     $curl = curl_init();
                                                     
                                                     curl_setopt_array($curl, <span class="hljs-keyword" style="color: rgb(227, 206, 171);">array</span>(
-                                                      CURLOPT_URL =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">{{url('/')}}/send-message</span>,
+                                                      CURLOPT_URL =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">{{env('PUBLIC_API')}}/send-message</span>,
                                                       CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword" style="color: rgb(227, 206, 171);">true</span>,
                                                       CURLOPT_ENCODING =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">''</span>,
                                                       CURLOPT_MAXREDIRS =&gt; <span class="hljs-number" style="color: rgb(140, 208, 211);">10</span>,
@@ -98,7 +98,7 @@
     
                                             </div>
                                             <div class="tab-pane fade" id="imageMessage" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                                <div class="alert alert-dark"><strong>GET API </strong> : {{url('/')}}/api/image.php?api={{Auth::user()->api_key}}&sender=91XXXXXXXXXX&number=91XXXXXXXXXX&msg=WATZAPI_APP&img=IMAGE_LINK</div>
+                                                <div class="alert alert-dark"><strong>GET API </strong> : {{env('PUBLIC_API')}}/api/image.php?api={{Auth::user()->api_key}}&sender=91XXXXXXXXXX&number=91XXXXXXXXXX&msg=WATZAPI_APP&img=IMAGE_LINK</div>
                                                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(63, 63, 63); color: rgb(220, 220, 220);"><span class="xml"><span class="php"><span class="hljs-meta" style="color: rgb(127, 159, 127);">&lt;?php</span>
 
                                                     $data = [
@@ -112,7 +112,7 @@
                                                     $curl = curl_init();
                                                     
                                                     curl_setopt_array($curl, <span class="hljs-keyword" style="color: rgb(227, 206, 171);">array</span>(
-                                                      CURLOPT_URL =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">{{url('/')}}/send-media</span>,
+                                                      CURLOPT_URL =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">{{env('PUBLIC_API')}}/send-media</span>,
                                                       CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword" style="color: rgb(227, 206, 171);">true</span>,
                                                       CURLOPT_ENCODING =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">''</span>,
                                                       CURLOPT_MAXREDIRS =&gt; <span class="hljs-number" style="color: rgb(140, 208, 211);">10</span>,
@@ -138,7 +138,7 @@
     
                                             </div>
                                             <div class="tab-pane fade" id="buttonMessage" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                                <div class="alert alert-dark"><strong>GET API </strong> : {{url('/')}}/api/button.php?api={{Auth::user()->api_key}}&sender=91XXXXXXXXXX&number=91XXXXXXXXXX&msg=WATZAPI_APP&img=IMAGE_LINK&footer=FOOTER_MESSAGE&btn1=BUTTON1&btn2=BUTTON2&btn3=BUTTON3</div>
+                                                <div class="alert alert-dark"><strong>GET API </strong> : {{env('PUBLIC_API')}}/api/button.php?api={{Auth::user()->api_key}}&sender=91XXXXXXXXXX&number=91XXXXXXXXXX&msg=WATZAPI_APP&img=IMAGE_LINK&footer=FOOTER_MESSAGE&btn1=BUTTON1&btn2=BUTTON2&btn3=BUTTON3</div>
                                                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(63, 63, 63); color: rgb(220, 220, 220);"><span class="xml"><span class="php"><span class="hljs-meta" style="color: rgb(127, 159, 127);">&lt;?php</span>
 
                                                     $data = [
@@ -155,7 +155,7 @@
                                                     $curl = curl_init();
                                                     
                                                     curl_setopt_array($curl, <span class="hljs-keyword" style="color: rgb(227, 206, 171);">array</span>(
-                                                      CURLOPT_URL =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">{{url('/')}}/send-button</span>,
+                                                      CURLOPT_URL =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">{{env('PUBLIC_API')}}/send-button</span>,
                                                       CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword" style="color: rgb(227, 206, 171);">true</span>,
                                                       CURLOPT_ENCODING =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">''</span>,
                                                       CURLOPT_MAXREDIRS =&gt; <span class="hljs-number" style="color: rgb(140, 208, 211);">10</span>,
@@ -194,7 +194,7 @@
     $curl = curl_init();
     
     curl_setopt_array($curl, <span class="hljs-keyword" style="color: rgb(227, 206, 171);">array</span>(
-      CURLOPT_URL =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">{{url('/')}}/send-template</span>,
+      CURLOPT_URL =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">{{env('PUBLIC_API')}}/send-template</span>,
       CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword" style="color: rgb(227, 206, 171);">true</span>,
       CURLOPT_ENCODING =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">''</span>,
       CURLOPT_MAXREDIRS =&gt; <span class="hljs-number" style="color: rgb(140, 208, 211);">10</span>,
@@ -221,7 +221,7 @@
 
                                         {{-- List Message --}}
                                             <div class="tab-pane fade" id="listMessage" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                                <div class="alert alert-dark"><strong>GET API </strong> : {{url('/')}}/api/list.php?api={{Auth::user()->api_key}}&sender=91XXXXXXXXXX&number=91XXXXXXXXXX&msg=WATZAPI_APP&listname=LIST_NAME&title=TITLE&footer=FOOTER_MESSAGE&list1=LIST1&list2=LIST2&list3=LIST3&list4=LIST4&list5=LIST5</div>
+                                                <div class="alert alert-dark"><strong>GET API </strong> : {{env('PUBLIC_API')}}/api/list.php?api={{Auth::user()->api_key}}&sender=91XXXXXXXXXX&number=91XXXXXXXXXX&msg=WATZAPI_APP&listname=LIST_NAME&title=TITLE&footer=FOOTER_MESSAGE&list1=LIST1&list2=LIST2&list3=LIST3&list4=LIST4&list5=LIST5</div>
 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(63, 63, 63); color: rgb(220, 220, 220);"><span class="xml"><span class="php"><span class="hljs-meta" style="color: rgb(127, 159, 127);">&lt;?php</span>
 
     $data = [
@@ -241,7 +241,7 @@
     $curl = curl_init();
     
     curl_setopt_array($curl, <span class="hljs-keyword" style="color: rgb(227, 206, 171);">array</span>(
-      CURLOPT_URL =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">{{url('/')}}/send-list</span>,
+      CURLOPT_URL =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">{{env('PUBLIC_API')}}/send-list</span>,
       CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword" style="color: rgb(227, 206, 171);">true</span>,
       CURLOPT_ENCODING =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">''</span>,
       CURLOPT_MAXREDIRS =&gt; <span class="hljs-number" style="color: rgb(140, 208, 211);">10</span>,
@@ -283,7 +283,7 @@
     $curl = curl_init();
     
     curl_setopt_array($curl, <span class="hljs-keyword" style="color: rgb(227, 206, 171);">array</span>(
-      CURLOPT_URL =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">{{url('/')}}/generate-qr</span>,
+      CURLOPT_URL =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">{{env('PUBLIC_API')}}/generate-qr</span>,
       CURLOPT_RETURNTRANSFER =&gt; <span class="hljs-keyword" style="color: rgb(227, 206, 171);">true</span>,
       CURLOPT_ENCODING =&gt; <span class="hljs-string" style="color: rgb(204, 147, 147);">''</span>,
       CURLOPT_MAXREDIRS =&gt; <span class="hljs-number" style="color: rgb(140, 208, 211);">10</span>,

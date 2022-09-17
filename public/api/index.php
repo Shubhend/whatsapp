@@ -1,3 +1,3 @@
 <?php
-$url = $_SERVER['SERVER_NAME'];
+$url = $_SERVER['SERVER_NAME'].'/whatsapp';
 ?>
