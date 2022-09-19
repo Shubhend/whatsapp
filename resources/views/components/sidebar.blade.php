@@ -47,7 +47,7 @@
 
 -->
                 <li class="{{request()->is('message/test') ? 'active-page' : ''}}">
-                    <a href="{{route('messagetest')}}" class=""><i class="material-icons-two-tone">note</i>{{__('system.test')}}</a>
+                    <a href="{{route('messagetest')}}" class=""><i class="material-icons-two-tone">note</i>Send Message</a>
                 </li>
                 @endif
                 <li class="{{request()->is('rest-api') ? 'active-page' : ''}}">

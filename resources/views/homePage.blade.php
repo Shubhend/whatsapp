@@ -51,7 +51,59 @@
 			</div>
 		</div>
 	</div>
+    <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex gap-4">
 
+                                    <h5 class="">List Devices </h5><span class="text-warning text-sm">*You have {{$limit_device}} limit devices</span>
+                                </div>
+                                <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#addDevice"><i class="material-icons">add</i>Add </button>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <th>Number</th>
+                                        <th>Webhook</th>
+                                        <th>Messages Sent</th>
+                                        <th>status</th>
+                                        <th>Action</th>
+                                    </thead>
+                                    <tbody>
+                                       @foreach ($numbers as $number)
+                                       <tr>
+    
+                                        <td>{{$number['body']}}</td>
+                                        <td>
+                                            <form action="" method="post">
+                                                @csrf
+                                                <input type="text" id="webhook" class="form-control form-control-solid-bordered" data-id="{{$number['body']}}" name="" value="{{$number['webhook']}}" id="">
+                                            </form>
+                                        </td>
+                                        <td>{{$number['messages_sent']}}</td>
+                                        <td><span class="badge badge-{{ $number['status'] == 'Connected' ? 'success' : 'danger'}}">{{$number['status']}}</span></td>
+                                        <td>
+                                            <div class="d-flex justify-content-center">
+
+                                                <a href="{{route('scan',$number->body)}}" class="btn btn-warning "  style="font-size: 10px;"><i class="material-icons">qr_code</i></a>
+                                                <form action="{{route('deleteDevice')}}" method="POST">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <input name="deviceId" type="hidden" value="{{$number['id']}}">
+                                                    <button type="submit" name="delete" class="btn btn-danger "><i class="material-icons">delete_outline</i></button>
+                                                </form>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                       @endforeach
+                                           
+                                      
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
                

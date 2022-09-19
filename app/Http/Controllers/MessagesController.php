@@ -42,7 +42,7 @@ class MessagesController extends Controller
         $this->saveReport($data);
 
      } catch (\Throwable $th) {
-        var_dump($th);
+       
      }
         
 
@@ -61,7 +61,7 @@ class MessagesController extends Controller
         /* End of Devendra's Code */
         
         $number->save();
-        return redirect()->back()->with('alert',['type' => 'success','msg' => 'Message sent, '. json_encode($sendMessage->data)]);
+        return redirect()->back()->with('alert',['type' => 'success','msg' => 'Message sent successfully.']);
     }
 
 
@@ -114,7 +114,7 @@ class MessagesController extends Controller
         $user->save();
         /* End of Devendra's Code */
         $number->save();
-        return redirect()->back()->with('alert', ['type' => 'success', 'msg' => 'Message sent, ' . json_encode($sendMessage->data)]);
+        return redirect()->back()->with('alert', ['type' => 'success', 'msg' => 'Message sent successfully.']);
     
        
 
@@ -158,7 +158,7 @@ class MessagesController extends Controller
         $user->save();
         /* End of Devendra's Code */
         $number->save();
-        return redirect()->back()->with('alert', ['type' => 'success', 'msg' => 'Message sent, ' . json_encode($sendMessage->data)]);
+        return redirect()->back()->with('alert', ['type' => 'success', 'msg' => 'Message sent successfully.']);
     
        
     }
@@ -221,7 +221,7 @@ class MessagesController extends Controller
         $user->save();
         /* End of Devendra's Code */
         $number->save();
-        return redirect()->back()->with('alert', ['type' => 'success', 'msg' => 'Message sent, ' . json_encode($sendMessage->data)]);
+        return redirect()->back()->with('alert', ['type' => 'success', 'msg' => 'Message sent successfully.']);
     }
 
 
@@ -268,7 +268,7 @@ class MessagesController extends Controller
         $user->save();
         /* End of Devendra's Code */
         $number->save();
-        return redirect()->back()->with('alert', ['type' => 'success', 'msg' => 'Message sent, ' . json_encode($sendMessage->data)]);
+        return redirect()->back()->with('alert', ['type' => 'success', 'msg' => 'Message sent successfully.']);
        
 
 

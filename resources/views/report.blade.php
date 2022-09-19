@@ -39,7 +39,8 @@
                                             </td>
                                             <td>
 
-                                            <?php if($tag->status){ echo "Sent";  }else {  echo "Pending"; }  ?>
+                                            
+                                            <?php if($tag->status){ echo "Sent";  }else {  echo "Pending <br/><p style='color:red;'>".@unserialize($tag->response)->msg.'</p>'; }  ?>
 </td>
                                         </tr>
                                         @endforeach

@@ -34,7 +34,13 @@ class HomeController extends Controller
 
     public function index(Request $request){
        
-       
+        $numbers = Number::where('user_id',$request->user()->id)->where('status','Connected')->first();
+      
+
+        if($numbers){
+
+            session()->put('selectedDevice', $numbers->body);
+        }
 
      
         return view('home',[
