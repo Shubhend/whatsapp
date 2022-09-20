@@ -38,7 +38,7 @@ class MessagesController extends Controller
        
      try {
         $data['response']=$sendMessage;
-        $this->saveReport($request,$data);
+        $this->saveReport($request,$data,'text');
 
      } catch (\Throwable $th) {
        
@@ -64,7 +64,7 @@ class MessagesController extends Controller
     }
 
 
-    public function saveReport($request,$data){
+    public function saveReport($request,$data,$message){
 
 
         $data['user_id']=$request->user()->id;
@@ -76,7 +76,7 @@ class MessagesController extends Controller
         $report->sender=$data['token'];
         $report->type=$data['type'];
         $report->receiver=$data['number'];
-        $report->message=$data['text'];
+        $report->message=$data[$message];
         $report->status=$data['response']->status;
 
         $report->save();
@@ -104,12 +104,13 @@ class MessagesController extends Controller
             return redirect()->back()->with('alert', ['type' => 'danger', 'msg' => 'Sender is disconnected']);
         }
         $sendMessage = json_decode($this->postMsg($data,'backend-send-media'));
+       
         try {
             $data['response']=$sendMessage;
-            $this->saveReport($request,$data);
+            $this->saveReport($request,$data,'caption');
     
-         } catch (\Throwable $th) {
-           
+         } catch (\Throwable $e) {
+          
          }
         if (!$sendMessage->status) {
             return redirect()->back()->with('alert', ['type' => 'danger', 'msg' => $sendMessage->msg ?? $sendMessage->message]);
@@ -155,10 +156,12 @@ class MessagesController extends Controller
             return redirect()->back()->with('alert',['type' => 'danger','msg' => 'Sender is disconnected']);
         }
         $sendMessage = json_decode($this->postMsg($data,'backend-send-button'));
+       
         try {
+          
+            $data['type']='button';
             $data['response']=$sendMessage;
-            $this->saveReport($request,$data);
-    
+            $this->saveReport($request,$data,'message');
          } catch (\Throwable $th) {
            
          }
@@ -226,8 +229,9 @@ class MessagesController extends Controller
         }
         $sendMessage = json_decode($this->postMsg($data,'backend-send-template'));
         try {
+            $data['type']='templateMessage';
             $data['response']=$sendMessage;
-            $this->saveReport($request,$data);
+            $this->saveReport($request,$data,'text');
     
          } catch (\Throwable $th) {
            
@@ -279,8 +283,9 @@ class MessagesController extends Controller
         }
         $sendMessage = json_decode($this->postMsg($data,'backend-send-list'));
         try {
+            $data['type']='list';
             $data['response']=$sendMessage;
-            $this->saveReport($request,$data);
+            $this->saveReport($request,$data,'text');
     
          } catch (\Throwable $th) {
            
