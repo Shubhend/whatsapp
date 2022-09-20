@@ -31,15 +31,14 @@ class MessagesController extends Controller
         if($number->status == 'Disconnect'){
             return redirect()->back()->with('alert',['type' => 'danger','msg' => 'Sender is disconnected']);
         }
-        $data['user_id']=$request->user()->id;
-      
-      
+
         $sendMessage = json_decode($this->postMsg($data,'backend-send-text'));
         
-        $data['response']=$sendMessage;
+       
        
      try {
-        $this->saveReport($data);
+        $data['response']=$sendMessage;
+        $this->saveReport($request,$data);
 
      } catch (\Throwable $th) {
        
@@ -65,10 +64,11 @@ class MessagesController extends Controller
     }
 
 
-    public function saveReport($data){
+    public function saveReport($request,$data){
 
 
-
+        $data['user_id']=$request->user()->id;
+      
         $report=new Report();
 
        $report->user_id=$data['user_id'];
@@ -104,6 +104,13 @@ class MessagesController extends Controller
             return redirect()->back()->with('alert', ['type' => 'danger', 'msg' => 'Sender is disconnected']);
         }
         $sendMessage = json_decode($this->postMsg($data,'backend-send-media'));
+        try {
+            $data['response']=$sendMessage;
+            $this->saveReport($request,$data);
+    
+         } catch (\Throwable $th) {
+           
+         }
         if (!$sendMessage->status) {
             return redirect()->back()->with('alert', ['type' => 'danger', 'msg' => $sendMessage->msg ?? $sendMessage->message]);
         }
@@ -148,6 +155,13 @@ class MessagesController extends Controller
             return redirect()->back()->with('alert',['type' => 'danger','msg' => 'Sender is disconnected']);
         }
         $sendMessage = json_decode($this->postMsg($data,'backend-send-button'));
+        try {
+            $data['response']=$sendMessage;
+            $this->saveReport($request,$data);
+    
+         } catch (\Throwable $th) {
+           
+         }
         if (!$sendMessage->status) {
             return redirect()->back()->with('alert', ['type' => 'danger', 'msg' => $sendMessage->msg ?? $sendMessage->message]);
         }
@@ -211,6 +225,13 @@ class MessagesController extends Controller
             return redirect()->back()->with('alert',['type' => 'danger','msg' => 'Sender is disconnected']);
         }
         $sendMessage = json_decode($this->postMsg($data,'backend-send-template'));
+        try {
+            $data['response']=$sendMessage;
+            $this->saveReport($request,$data);
+    
+         } catch (\Throwable $th) {
+           
+         }
         if (!$sendMessage->status) {
             return redirect()->back()->with('alert', ['type' => 'danger', 'msg' => $sendMessage->msg ?? $sendMessage->message]);
         }
@@ -257,7 +278,13 @@ class MessagesController extends Controller
             return redirect()->back()->with('alert',['type' => 'danger','msg' => 'Sender is disconnected']);
         }
         $sendMessage = json_decode($this->postMsg($data,'backend-send-list'));
-       
+        try {
+            $data['response']=$sendMessage;
+            $this->saveReport($request,$data);
+    
+         } catch (\Throwable $th) {
+           
+         }
         if (!$sendMessage->status) {
             return redirect()->back()->with('alert', ['type' => 'danger', 'msg' => $sendMessage->msg ?? $sendMessage->message]);
         }
