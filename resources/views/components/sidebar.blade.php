@@ -31,10 +31,11 @@
                 <li class="{{request()->is('report') ? 'active-page' : ''}}">
                     <a href="{{route('report')}}" class=""><i class="material-icons-two-tone">note</i>Report</a>
                 </li>
-<!--
+
                 <li class="{{request()->is('autoreply') ? 'active-page' : ''}}">
                     <a href="{{route('autoreply')}}" class=""><i class="material-icons-two-tone">message</i>{{__('system.autoreply')}}</a>
                 </li>
+                <!--
                 <li class="{{request()->is('tag') ? 'active-page' : ''}}">
                     <a href="{{route('tag')}}"><i class="material-icons-two-tone">contacts</i>Phone Book</a>
                 </li>
