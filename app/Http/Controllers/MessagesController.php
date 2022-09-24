@@ -21,21 +21,26 @@ class MessagesController extends Controller
 
 
     public function textMessageTest(Request $request){
-        $data = [
-            'type' => 'text',
-            'token' => $request->sender,
-            'number' => $request->number,
-            'text' => $request->message
-        ];
+
+        $text = trim($request->number);
+        $textAr = explode("\n", $text);
+        $textAr = array_filter($textAr, 'trim'); // remove any extra \r characters left behind
         $number = Number::whereBody($request->sender)->first();
         if($number->status == 'Disconnect'){
             return redirect()->back()->with('alert',['type' => 'danger','msg' => 'Sender is disconnected']);
         }
+        foreach ($textAr as $line) {
+        
+        $data = [
+            'type' => 'text',
+            'token' => $request->sender,
+            'number' => $line,
+            'text' => $request->message
+        ];
+       
 
         $sendMessage = json_decode($this->postMsg($data,'backend-send-text'));
         
-       
-       
      try {
         $data['response']=$sendMessage;
         $this->saveReport($request,$data,'text');
@@ -46,7 +51,8 @@ class MessagesController extends Controller
         
 
         if(!$sendMessage->status){
-           return redirect()->back()->with('alert',['type' => 'danger','msg' => $sendMessage->msg ?? $sendMessage->message]);
+            continue;
+         //  return redirect()->back()->with('alert',['type' => 'danger','msg' => $sendMessage->msg ?? $sendMessage->message]);
         }
 
      
@@ -60,7 +66,8 @@ class MessagesController extends Controller
         /* End of Devendra's Code */
         
         $number->save();
-        return redirect()->back()->with('alert',['type' => 'success','msg' => 'Message sent successfully.']);
+    }
+        return redirect()->back()->with('alert',['type' => 'success','msg' => 'Message Processing successfully. Please check the status']);
     }
 
 
@@ -88,21 +95,31 @@ class MessagesController extends Controller
 
 
     public function imageMessageTest(Request $request){
+
+
+        
+        $text = trim($request->number);
+        $textAr = explode("\n", $text);
+        $textAr = array_filter($textAr, 'trim'); // remove any extra \r characters left behind
+        $number = Number::whereBody($request->sender)->first();
+        if($number->status == 'Disconnect'){
+            return redirect()->back()->with('alert',['type' => 'danger','msg' => 'Sender is disconnected']);
+        }
+    foreach ($textAr as $line) {
+
         $url = $request->url;
         $fileName = pathinfo($url, PATHINFO_FILENAME);
         $data = [
             'type' => $request->type,
             'token' => $request->sender,
             'url' => $request->url,
-            'number' => $request->number,
+            'number' => $line,
             'caption' => $request->message,
             'fileName' => $fileName,
             'type' => $request->type
         ];
-        $number = Number::whereBody($request->sender)->first();
-        if ($number->status == 'Disconnect') {
-            return redirect()->back()->with('alert', ['type' => 'danger', 'msg' => 'Sender is disconnected']);
-        }
+      
+
         $sendMessage = json_decode($this->postMsg($data,'backend-send-media'));
        
         try {
@@ -122,7 +139,9 @@ class MessagesController extends Controller
         $user->save();
         /* End of Devendra's Code */
         $number->save();
-        return redirect()->back()->with('alert', ['type' => 'success', 'msg' => 'Message sent successfully.']);
+
+    }
+        return redirect()->back()->with('alert', ['type' => 'success', 'msg' => 'Message Processing successfully. Please check the status.']);
     
        
 

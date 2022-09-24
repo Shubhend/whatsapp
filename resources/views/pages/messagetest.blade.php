@@ -59,8 +59,8 @@
                                                 <label for="textmessage" class="form-label">Sender</label>
                                                 <input type="text" value={{Session::get('selectedDevice')}} name="sender" id="sender" class="form-control" readonly>
                                                    
-                                                <label for="number" class="form-label">Number ( receiver )</label>
-                                                <input type="text" name="number" class="form-control" id="number" required>
+                                                <label for="number" class="form-label">Numbers ( receiver )</label>
+                                                <textarea type="text" style="height:150px;" name="number" class="form-control" id="number" placeholder="eg one number per line &#10; 9198XXXXXXXX &#10; 9112XXXXXXXX" required></textarea>
                                                 <label for="textmessage" class="form-label">Message</label>
                                                 <textarea type="text" name="message" class="form-control" id="textmessage" required></textarea>
                                                 <button type="submit" name="sendMsg" class="btn btn-success mt-3"><i class="material-icons-outlined">send</i>Send</button>
@@ -82,7 +82,7 @@
                                                <input type="text" value={{Session::get('selectedDevice')}} name="sender" id="sender" class="form-control" readonly>
                                                  
                                                 <label for="number" class="form-label">Number ( receiver )</label>
-                                                <input type="text" name="number" class="form-control " id="number" required>
+                                                <textarea type="text" name="number" class="form-control " placeholder="eg one number per line &#10; 9198XXXXXXXX &#10; 9112XXXXXXXX" id="number" style="height:150px" required></textarea>
 
 <div class="file-uploader">
     <label class="form-label mt-4">Media Url *Select from file manager,or fill manual</label><br>
