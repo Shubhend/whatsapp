@@ -26,6 +26,8 @@
                                         <tr>
                                             <th>SendTo</th>
                                             <th>Message</th>
+                                            <th>Type</th>
+                                            <th>Date</th>
                                             <th class="d-flex justify-content-center">Status</th>
                                         </tr>
                                     </thead>
@@ -37,10 +39,26 @@
                                            <td>
                                            {{$tag->message}}
                                             </td>
+                                            <td>   {{$tag->type}}  </td>
+                                            <td>   {{$tag->created_at}}  </td>
                                             <td>
 
                                             
-                                            <?php if($tag->status){ echo "Sent";  }else {  echo "Pending <br/><p style='color:red;'>".@unserialize($tag->response)->msg.'</p>'; }  ?>
+                                            <?php if($tag->status){ echo "Sent";  }else { 
+                                                
+                                                echo "Pending <br/><p style='color:red;'>";
+                                              //  echo @unserialize($tag->response)->message;
+                                                if(@unserialize($tag->response)->msg=='Make sure your server Node already running!'){
+                                                  echo "NODE_SERVER_NOT_RUNNING";
+                                                }
+                                                
+                                                if(@unserialize($tag->response)->message=='The destination Number not registered in whatsapp or your sender not connected'){
+                                                    echo "CONTACT_NOT_FOUND";
+                                                }
+                                                
+                                               echo '</p>'; 
+                                               
+                                               }  ?>
 </td>
                                         </tr>
                                         @endforeach

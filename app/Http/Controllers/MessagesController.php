@@ -51,8 +51,8 @@ class MessagesController extends Controller
         
 
         if(!$sendMessage->status){
-            continue;
-         //  return redirect()->back()->with('alert',['type' => 'danger','msg' => $sendMessage->msg ?? $sendMessage->message]);
+           // continue;
+           return redirect()->back()->with('alert',['type' => 'danger','msg' => $sendMessage->msg ?? $sendMessage->message]);
         }
 
      
