@@ -18,7 +18,129 @@
         </ul>
     </div>
 @endif
-                <div class="row">
+              
+
+
+    
+<div class="row">
+                 <h2>Account Details </h2>
+                 <div class="col-xl-4">
+                  
+                    <div class="card widget widget-stats">
+                            <div class="card-body">
+                                <div class="widget-stats-container d-flex">
+                                    <div class="widget-stats-icon widget-stats-icon-primary">
+                                        <i class="material-icons-outlined">contacts</i>
+                                    </div>
+                                    <div class="widget-stats-content flex-fill">
+                                        <span class="widget-stats-title">All Contacts</span>
+                                        <span class="widget-stats-amount">{{ Auth::user()->contacts()->count()}}</span>
+    
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4">
+                        <div class="card widget widget-stats">
+                            <div class="card-body">
+                                <div class="widget-stats-container d-flex">
+                                    <div class="widget-stats-icon widget-stats-icon-warning">
+                                        <i class="material-icons-outlined">message</i>
+                                    </div>
+                                    <div class="widget-stats-content flex-fill">
+                                        <span class="widget-stats-title">Account Status</span>
+    
+                                        <span class="widget-stats-info"> {{$userDetails->status }}</span>
+                                        </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4">
+                        <div class="card widget widget-stats">
+                            <div class="card-body">
+                                <div class="widget-stats-container d-flex">
+                                    <div class="widget-stats-icon widget-stats-icon-warning">
+                                        <i class="material-icons-outlined">message</i>
+                                    </div>
+                                    <div class="widget-stats-content flex-fill">
+                                        <span class="widget-stats-title">Active Subscription</span>
+    
+                                        <span class="widget-stats-info"> {{$userDetails->active_subscription }}</span>
+                                        </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4">
+                        <div class="card widget widget-stats">
+                            <div class="card-body">
+                                <div class="widget-stats-container d-flex">
+                                    <div class="widget-stats-icon widget-stats-icon-warning">
+                                        <i class="material-icons-outlined">message</i>
+                                    </div>
+                                    <div class="widget-stats-content flex-fill">
+                                        <span class="widget-stats-title">Subscription Expired</span>
+    
+                                        <span class="widget-stats-info"> {{$userDetails->subscription_expired }}</span>
+                                        </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4">
+                        <div class="card widget widget-stats">
+                            <div class="card-body">
+                                <div class="widget-stats-container d-flex">
+                                    <div class="widget-stats-icon widget-stats-icon-warning">
+                                        <i class="material-icons-outlined">message</i>
+                                    </div>
+                                    <div class="widget-stats-content flex-fill">
+                                        <span class="widget-stats-title">Credit </span>
+    
+                                        <span class="widget-stats-info"> {{$userDetails->credit }}</span>
+                                        </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xl-4">
+                        <div class="card widget widget-stats">
+                            <div class="card-body">
+                                <div class="widget-stats-container d-flex">
+                                    <div class="widget-stats-icon widget-stats-icon-warning">
+                                        <i class="material-icons-outlined">message</i>
+                                    </div>
+                                    <div class="widget-stats-content flex-fill">
+                                        <span class="widget-stats-title">Total Message </span>
+    
+                                        <span class="widget-stats-info"> {{$messageCount }}</span>
+                                        </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+    </div>
+
+<div class="row">
                     {{-- text danger subscription --}}
                      <h5 class="nav-link text-{{Auth::user()->is_expired_subscription ? 'danger' : 'success'}}  mt-1 hide-sidebar-toggle-button">Subscription : {{Auth::user()->expired_subscription}}</h5>
                                
@@ -51,6 +173,9 @@
 			</div>
 		</div>
 	</div>
+
+
+
     <div class="row">
                     <div class="col-xl-12">
                         <div class="card">

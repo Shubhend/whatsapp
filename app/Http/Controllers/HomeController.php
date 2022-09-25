@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Number;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Report;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
@@ -17,7 +18,10 @@ class HomeController extends Controller
 
     public function homePage(Request $request){
         $numbers = Number::where('user_id',$request->user()->id)->where('status','Connected')->first();
-      
+        
+        $reportCount = Report::where('user_id',$request->user()->id)->count();
+        $failedMessage = Report::where('user_id',$request->user()->id)->where('status',0)->count();
+       
 
         if($numbers){
 
@@ -26,8 +30,10 @@ class HomeController extends Controller
 
         return view('homePage',[
             'numbers' => $request->user()->numbers()->latest()->paginate(15),
-           
             'limit_device' => $request->user()->limit_device,
+            'userDetails' => $request->user(),
+            'messageCount' => $reportCount,
+            'messageFailed' => $failedMessage
         ]);
 
     }
@@ -35,7 +41,11 @@ class HomeController extends Controller
     public function index(Request $request){
        
         $numbers = Number::where('user_id',$request->user()->id)->where('status','Connected')->first();
-      
+     
+        
+
+        var_dump($request->user());exit;
+
 
         if($numbers){
 
