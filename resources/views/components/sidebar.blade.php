@@ -113,7 +113,7 @@
                          
 
                             <li class="nav-item hidden-on-mobile">
-                                <a class="nav-link nav-notifications-toggle" id="notificationsDropDown" href="#" data-bs-toggle="dropdown">4</a>
+                                <a class="nav-link nav-notifications-toggle" id="notificationsDropDown" href="#" data-bs-toggle="dropdown">  <button type="submit" class="" >Logout</button></a>
                                 <div class="dropdown-menu dropdown-menu-end notifications-dropdown" aria-labelledby="notificationsDropDown">
                                     <form action="{{route('logout')}}" method="POST">
                                         @csrf
