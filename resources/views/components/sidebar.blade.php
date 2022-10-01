@@ -45,7 +45,9 @@
                 <li class="{{request()->is('campaigns') ? 'active-page' : ''}}">
                     <a href="{{route('campaign.lists')}}" class=""><i class="material-icons-two-tone">history</i>List Campaign</a>
                 </li>
-
+                <li class="{{request()->is('Template ') ? 'active-page' : ''}}">
+                    <a href="{{route('template')}}" class=""><i class="material-icons-two-tone">history</i>Template</a>
+                </li>
 
                 <li class="{{request()->is('message/test') ? 'active-page' : ''}}">
                     <a href="{{route('messagetest')}}" class=""><i class="material-icons-two-tone">note</i>Send Message</a>

@@ -50,10 +50,10 @@
                                               //  echo @unserialize($tag->response)->message;
                                                 if(@unserialize($tag->response)->msg=='Make sure your server Node already running!'){
                                                   echo "NODE_SERVER_NOT_RUNNING";
-                                                }
-                                                
-                                                if(@unserialize($tag->response)->message=='The destination Number not registered in whatsapp or your sender not connected'){
+                                                }else if(@unserialize($tag->response)->message=='The destination Number not registered in whatsapp or your sender not connected'){
                                                     echo "CONTACT_NOT_FOUND";
+                                                }else{
+                                                    echo @unserialize($tag->response)->msg ? @unserialize($tag->response)->msg : @unserialize($tag->response)->message;
                                                 }
                                                 
                                                echo '</p>'; 

@@ -13,13 +13,24 @@ class ApiController extends Controller
     
     
 
+    public function phoneHandle($no){
+
+        $phoneNumber = preg_replace('/[^0-9]/','',$no);
+        if(strlen($phoneNumber) <= 10) {
+            $phoneNumber = '91'.$phoneNumber;
+        }
+        return $phoneNumber;
+    
+    }
+
     public function messageText(Request $request){
-      
+        
         $data = [
             'token' => $request->sender,
-            'number' => $request->number,
+            'number' => $this->phoneHandle($request->number),
             'text' => $request->message
         ];
+
         $number = Number::whereBody($request->sender)->first();
         if ($number->status == 'Disconnect') {
             return response()->json([

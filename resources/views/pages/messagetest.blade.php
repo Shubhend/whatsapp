@@ -165,8 +165,8 @@
                                                 {{-- input --}}
                                                 <input type="text" value={{Session::get('selectedDevice')}} name="sender" id="sender" class="form-control" readonly>
                                                  <label for="number" class="form-label">Number ( receiver )</label>
-                                                 <input type="text" name="number" class="form-control" id="number" required>
-                                                 
+                                                 <textarea type="text" style="height:150px;" name="number" class="form-control" id="number" placeholder="eg one number per line &#10; 9198XXXXXXXX &#10; 9112XXXXXXXX" required></textarea>
+                                             
                                                  <label for="textmessage" class="form-label">Message</label>
                                                  <input type="text" name="message" class="form-control" id="textmessage" required>
                                                  <label for="footer" class="form-label">Footer message *optional</label>
@@ -200,7 +200,8 @@
                                                 {{-- input --}}
                                                 <input type="text" value={{Session::get('selectedDevice')}} name="sender" id="sender" class="form-control" readonly>
                                                  <label for="number" class="form-label">Number ( receiver )</label>
-                                                 <input type="text" name="number" class="form-control" id="number" required>
+                                                 <textarea type="text" style="height:150px;" name="number" class="form-control" id="number" placeholder="eg one number per line &#10; 9198XXXXXXXX &#10; 9112XXXXXXXX" required></textarea>
+                                           
                                                  
                                                  <label for="textmessage" class="form-label">Message</label>
                                                  <input type="text" name="message" class="form-control" id="textmessage" required>
@@ -241,13 +242,13 @@
                                                 {{-- input --}}
                                                 <input type="text" value={{Session::get('selectedDevice')}} name="sender" id="sender" class="form-control" readonly>
                                                  <label for="number" class="form-label">Number ( receiver )</label>
-                                                 <input type="text" name="number" class="form-control" id="number" required>
-                                                 
+                                                 <textarea type="text" style="height:150px;" name="number" class="form-control" id="number" placeholder="eg one number per line &#10; 9198XXXXXXXX &#10; 9112XXXXXXXX" required></textarea>
+                                            
                                                  <label for="textmessage" class="form-label">Message</label>
                                                  <input type="text" name="message" class="form-control" id="textmessage" required>
                                                  <label for="footer" class="form-label">Footer message *optional</label>
                                                  <input type="text" name="footer" class="form-control" id="textmessage" >
-                                                 <label for="footer" class="form-label">Title List</label>
+                                                <label for="footer" class="form-label">Title List</label>
                                                  <input type="text" name="title" class="form-control" id="title" required>
                                                  <label for="buttontext" class="form-label">Text Button </label>
 

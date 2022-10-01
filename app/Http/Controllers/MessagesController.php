@@ -160,10 +160,13 @@ class MessagesController extends Controller
             }
         }
 
-        
+        $text = trim($request->number);
+        $textAr = explode("\n", $text);
+        $textAr = array_filter($textAr, 'trim'); // remove any extra \r characters left behind
+    foreach ($textAr as $line) {
         $data = [
             'token' => $request->sender,
-            'number' => $request->number,
+            'number' => $line,
             'button' => json_encode($buttons),
             'message' => $request->message,
             'footer' => $request->footer ?? '',
@@ -194,6 +197,7 @@ class MessagesController extends Controller
         $user->save();
         /* End of Devendra's Code */
         $number->save();
+    }
         return redirect()->back()->with('alert', ['type' => 'success', 'msg' => 'Message sent successfully.']);
     
        
@@ -231,10 +235,14 @@ class MessagesController extends Controller
             $templates[] = ["index" => $ii, $type => ["displayText" => $text, $typePurpose => $urlOrNumber]];
         }
             
+        $text = trim($request->number);
+        $textAr = explode("\n", $text);
+        $textAr = array_filter($textAr, 'trim'); // remove any extra \r characters left behind
+        foreach ($textAr as $line) {
         
         $data = [
             'token' => $request->sender,
-            'number' => $request->number,
+            'number' => $line,
             'button' => json_encode($templates),
             'text' => $request->message,
             'footer' => $request->footer ?? '',
@@ -265,6 +273,8 @@ class MessagesController extends Controller
         $user->save();
         /* End of Devendra's Code */
         $number->save();
+
+    }
         return redirect()->back()->with('alert', ['type' => 'success', 'msg' => 'Message sent successfully.']);
     }
 
@@ -286,6 +296,11 @@ class MessagesController extends Controller
             ];
         }
        
+        $text = trim($request->number);
+        $textAr = explode("\n", $text);
+        $textAr = array_filter($textAr, 'trim'); // remove any extra \r characters left behind
+        foreach ($textAr as $line) {
+
         $data = [
             'token' => $request->sender,
             'number' => $request->number,
@@ -319,6 +334,9 @@ class MessagesController extends Controller
         $user->save();
         /* End of Devendra's Code */
         $number->save();
+
+
+    }
         return redirect()->back()->with('alert', ['type' => 'success', 'msg' => 'Message sent successfully.']);
        
 
