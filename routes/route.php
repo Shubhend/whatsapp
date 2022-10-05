@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\Api\ApiController;
+use App\Http\Controllers\BlastController;
 use App\Http\Controllers\Template;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReportController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,7 @@ Route::get('template', [Template::class,'index'])->name('template');
 Route::get('template/create/{id?}', [Template::class,'create'])->name('createtemplate');
 Route::any('template/save', [Template::class,'save'])->name('saveTemplate');
 Route::any('template/delete', [Template::class,'destroy'])->name('deleteTemplate');
+Route::any('retryBlast', [BlastController::class,'retryBlast'])->name('retryBlast');
         
  
 

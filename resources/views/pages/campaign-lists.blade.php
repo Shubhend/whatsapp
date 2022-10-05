@@ -38,6 +38,13 @@
               @csrf
               <button type="submit" class="btn btn-danger btn-sm">Delete All</button>
             </form>
+
+           
+          </div>
+
+          <div class="col-sm-2">
+          <a href="{{route('campaign.create')}}" class="btn btn-primary btn-sm"> Add Campaign </a>
+
           </div>
              
           </div>
@@ -80,7 +87,12 @@
                             <td >
                                 {{-- if status success badge success, if waiting badge warning if failed badge danger --}}
                                 <span class="badge badge-{{$campaign->status === 'executed' ? 'success' : 'danger'}}">{{$campaign->status}}</span>
-                                  </td>
+                            
+                                <?php if($campaign->blasts_pending > 0){ ?>
+                                <button type="button"  onclick="retry('{{$campaign->user_id}}','{{$campaign->id}}')" class="btn btn-sm btn-primary">Retry</button>
+                                <?php } ?>
+                            
+                            </td>
                                 
                             {{-- <td class="d-flex justify-content-center">
                                 <a href="{{route('editBlast',$campaign->id)}}" class="btn btn-sm btn-primary">Edit</a>
@@ -89,6 +101,8 @@
                                     @csrf
                                     <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                 </form>
+
+                              
                             </td> --}}
                       </tr>
                       @endforeach
@@ -129,6 +143,30 @@
     <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
   <script src="{{asset('js/autoreply.js')}}"></script>
   <script>
+
+
+
+function retry(userId,id){
+
+    $.ajax({
+           method : 'POST',
+           url : '{{route('retryBlast')}}',
+           data : {userId,id, "_token": "{{ csrf_token() }}"},
+           dataType : 'json',
+           success : (result) => {
+         
+           
+         //  window.location = ''
+           },
+           error : (err) => {
+                //console.log(err);
+              //  window.location = '';
+           }
+       })
+
+}
+
+
     function viewCampaignMessage(id) {
     $.ajax({
         url: `/campaign/show/${id}`,

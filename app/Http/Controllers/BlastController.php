@@ -105,7 +105,7 @@ class BlastController extends Controller
             // create text 
             switch ($request->type_message) {
                 case 'text':
-                    $msg = ["text" => $request->message];
+                    $msg = ["text" => "this is tesxtf check"];
                     break;
                 case 'image':
                    
@@ -310,7 +310,11 @@ class BlastController extends Controller
 
      
          $blasts = Blast::insert($data);
+     
         
+         $data=Blast::where('campaign_id',$campaign->id)->where('user_id',Auth::user()->id)->get();
+
+
         if($request->start_date != null){
         
             $campaign->update([
@@ -325,6 +329,7 @@ class BlastController extends Controller
 
             $result = $this->sendBlast($data,$request->delay,$campaign);
            
+        
             if(json_decode($result)->status){
                 $campaign->update([
                     'status' => 'executed'
@@ -349,6 +354,48 @@ class BlastController extends Controller
 
 
 
+    
+    public function retryBlast(Request $request){
+        // var_dump($request->post()['userId']);
+        try {
+            $userId=$request->post()['userId'];
+            $campId=$request->post()['id'];
+
+
+           $pendingData= Blast::where('user_id',$userId)->where('campaign_id',$campId)->where('status','pending')->get();
+
+           foreach($pendingData as $d){
+
+
+            $data[] = [
+                'id' => $d->id,
+                'sender' => $d->sender,
+                'user_id' => $d->user_id,
+                'campaign_id' => $d->campaign_id,
+                'receiver' => $d->receiver,
+                'message' => $d->message,
+                'type' => $d->type_message,
+                'status' => 'pending',
+                'created_at' => now(),
+                'updated_at' => now()
+            ];
+
+
+           }
+          
+           if($data){
+            $result = $this->sendBlast($data,2,$campId);
+           }
+                 
+        } catch (\Throwable $th) {
+         
+           return false;
+        }
+      return true;
+     }
+ 
+
+
     public function sendBlast($data,$delay,$campaign){
        try {
             //code...
@@ -359,14 +406,16 @@ class BlastController extends Controller
             ]);
                 
        } catch (\Throwable $th) {
-           $campaign->delete();
-           session()->flash('alert',[
-               'type' => 'danger',
-               'msg' => 'There is trouble in your node server'
-           ]);
+
           return false;
        }
     }
+
+
+
+
+
+
     public function getAllnumbers(){
         $contacts = Auth::user()->contacts()->get();
         $numbers = [];

@@ -9,11 +9,15 @@
         </x-alert>
      @endif
         <div class="content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
+            <div class="container-fluid">            
+            
+          <a href="{{route('template')}}" class="btn btn-primary btn-sm" class=""> Template </a>
+
+</div>
+
+
                     <div class="col">
                         <div class="page-description page-description-tabbed">
-                           
 
                             <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">

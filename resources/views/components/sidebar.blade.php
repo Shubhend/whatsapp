@@ -19,10 +19,13 @@
                 <li class="{{request()->is('homePage') ? 'active-page' : ''}}">
                     <a href="{{route('homePage')}}" class=""><i class="material-icons-two-tone">dashboard</i>{{__('system.home')}}</a>
                 </li>
+
+                <!--
                  <li class="{{request()->is('file-manager') ? 'active-page' : ''}}">
                     <a href="{{route('file-manager')}}" class=""><i class="material-icons-two-tone">folder</i>{{__('File Manager')}}</a>
                 </li>
                
+                 -->
                 <x-select-device></x-select-device>
 
 
@@ -39,16 +42,22 @@
                 <li class="{{request()->is('tag') ? 'active-page' : ''}}">
                     <a href="{{route('tag')}}"><i class="material-icons-two-tone">contacts</i>Phone Book</a>
                 </li>
+
+                <!--
                 <li class="{{request()->is('campaign/create') ? 'active-page' : ''}}">
                     <a href="{{route('campaign.create')}}" class=""><i class="material-icons-two-tone">email</i>Create Campaign</a>
                 </li>
+                -->
+
                 <li class="{{request()->is('campaigns') ? 'active-page' : ''}}">
-                    <a href="{{route('campaign.lists')}}" class=""><i class="material-icons-two-tone">history</i>List Campaign</a>
+                    <a href="{{route('campaign.lists')}}" class=""><i class="material-icons-two-tone">history</i>Campaign</a>
                 </li>
+                <!--
                 <li class="{{request()->is('Template ') ? 'active-page' : ''}}">
                     <a href="{{route('template')}}" class=""><i class="material-icons-two-tone">history</i>Template</a>
                 </li>
 
+                -->
                 <li class="{{request()->is('message/test') ? 'active-page' : ''}}">
                     <a href="{{route('messagetest')}}" class=""><i class="material-icons-two-tone">note</i>Send Message</a>
                 </li>
@@ -103,6 +112,10 @@
                             <li class="nav-item">
                                 <a class="nav-link hide-sidebar-toggle-button" href="#"><i class="material-icons">first_page</i></a>
                             </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link hide-sidebar-toggle-button" href="{{route('file-manager')}}" class="">{{__('File Manager')}}</a>
+                            </li>
                            
                         </ul>
 
@@ -111,16 +124,20 @@
                        
                         <ul class="navbar-nav">
                          
+                      
 
                             <li class="nav-item hidden-on-mobile">
-                                <a class="nav-link nav-notifications-toggle" id="notificationsDropDown" href="#" data-bs-toggle="dropdown">  <button type="submit" class="" >Logout</button></a>
-                                <div class="dropdown-menu dropdown-menu-end notifications-dropdown" aria-labelledby="notificationsDropDown">
+                                 
                                     <form action="{{route('logout')}}" method="POST">
-                                        @csrf
-                                        <button type="submit" class="dropdown-header h6 " style="border: 0; background-color :white;">Logout</button>
+
+                                    @csrf
+                                   <button type="submit" class="dropdown-header h6 " style="border: 0; background-color :white;">Logout</button>
+                                    
                                     </form>
-                                        {{-- <a href={{route('user.changePassword')}} class="dropdown-header h6" style="border: 0; background-color :white;">Setting</a>
-                               --}} </div> 
+                                       
+                                    <!--- <a href={{route('user.changePassword')}} class="dropdown-header h6" style="border: 0; background-color :white;">Setting</a>
+               
+-->
                             </li>
                         </ul>
                     </div>

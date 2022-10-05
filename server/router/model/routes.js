@@ -248,22 +248,28 @@ const wa = require(_0xaa9022(0x1e8)),
             'message': 'Check\x20your\x20whatsapp\x20connection'
         });
         return asyncForEach(_0x30912d, async (_0x37c52e, _0x43f00d) => {
+            console.log("ddddddd",_0x37c52e);
             const _0x2a1aa7 = _0x203d00;
             console[_0x2a1aa7(0x1ec)](_0x43f00d);
             const {
                 sender: _0x495239,
                 receiver: _0x33cf6d,
                 message: _0x335bab,
-                campaign_id: _0x86cb0c
+                campaign_id: _0x86cb0c,
             } = _0x37c52e;
             if (_0x495239 && _0x33cf6d && _0x335bab) {
                 const _0x344b30 = await wa[_0x2a1aa7(0x1ea)](_0x495239, _0x33cf6d, _0x335bab);
+               let  _0x3229ca;
                 if (_0x344b30) {
-                    const _0x3229ca = await dbQuery(_0x2a1aa7(0x201) + _0x33cf6d + _0x2a1aa7(0x1f8) + _0x86cb0c + '\x27');
+                     _0x3229ca = await dbQuery(_0x2a1aa7(0x201) + _0x33cf6d + _0x2a1aa7(0x1f8) + _0x86cb0c + '\x27' + ' AND id = '+_0x37c52e.id);
                 } else {
-                    const _0x5d3abe = await dbQuery('UPDATE\x20blasts\x20SET\x20status\x20=\x20\x27failed\x27\x20WHERE\x20receiver\x20=\x20\x27' + _0x33cf6d + _0x2a1aa7(0x1f8) + _0x86cb0c + '\x27');
+                   _0x3229ca = await dbQuery('UPDATE\x20blasts\x20SET\x20status\x20=\x20\x27failed\x27\x20WHERE\x20receiver\x20=\x20\x27' + _0x33cf6d + _0x2a1aa7(0x1f8) + _0x86cb0c + '\x27'+ ' AND id = '+_0x37c52e.id);
                 }
+            //    console.log("ddddd",_0x495239, _0x33cf6d, _0x335bab,_0x3229ca);
+            //    console.log(_0x2a1aa7(0x201) + _0x33cf6d + _0x2a1aa7(0x1f8) + _0x86cb0c + '\x27' + ' AND id = '+_0x37c52e.id);
+            //    console.log('UPDATE\x20blasts\x20SET\x20status\x20=\x20\x27failed\x27\x20WHERE\x20receiver\x20=\x20\x27' + _0x33cf6d + _0x2a1aa7(0x1f8) + _0x86cb0c + '\x27'+' AND id = '+_0x37c52e.id);
             }
+
             await _0x3fb6df(_0x74a4e2[_0x2a1aa7(0x1e7)]['delay'] * 0x3e8);
         }), _0x38b84b[_0x203d00(0x1f3)]({
             'status': !![],
