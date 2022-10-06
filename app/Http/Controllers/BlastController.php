@@ -105,7 +105,7 @@ class BlastController extends Controller
             // create text 
             switch ($request->type_message) {
                 case 'text':
-                    $msg = ["text" => "this is tesxtf check"];
+                    $msg = ["text" => $request->message];
                     break;
                 case 'image':
                    
