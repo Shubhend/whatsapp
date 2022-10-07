@@ -29,9 +29,7 @@ class ContactController extends Controller
 
     public function store(Request $request){
 
-        $request->validate([
-            'number' => ['unique:contacts']
-        ]);
+
    
         Contact::create([
             'user_id' => Auth::user()->id,
