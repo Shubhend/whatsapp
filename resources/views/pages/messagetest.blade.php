@@ -172,7 +172,7 @@
                                                  <textarea type="text" style="height:150px;" name="number" class="form-control" id="number" placeholder="eg one number per line &#10; 9198XXXXXXXX &#10; 9112XXXXXXXX" required></textarea>
                                              
                                                  <label for="textmessage" class="form-label">Message</label>
-                                                 <input type="text" name="message" class="form-control" id="textmessage" required>
+                                                 <textarea type="text" name="message" class="form-control" id="textmessage" required> </textarea>
                                                  <label for="footer" class="form-label">Footer message *optional</label>
 
                                                  <input type="text" name="footer" class="form-control" id="footer" >
@@ -208,7 +208,7 @@
                                            
                                                  
                                                  <label for="textmessage" class="form-label">Message</label>
-                                                 <input type="text" name="message" class="form-control" id="textmessage" required>
+                                                 <textarea type="text" name="message" class="form-control" id="textmessage" required> </textarea>
                                                  <label for="footer" class="form-label">Footer message *optional</label>
                                                  <input type="text" name="footer" class="form-control" id="number" >
 <div class=" file-uploader">
@@ -249,7 +249,7 @@
                                                  <textarea type="text" style="height:150px;" name="number" class="form-control" id="number" placeholder="eg one number per line &#10; 9198XXXXXXXX &#10; 9112XXXXXXXX" required></textarea>
                                             
                                                  <label for="textmessage" class="form-label">Message</label>
-                                                 <input type="text" name="message" class="form-control" id="textmessage" required>
+                                                 <textarea type="text" name="message" class="form-control" id="textmessage" required> </textarea>
                                                  <label for="footer" class="form-label">Footer message *optional</label>
                                                  <input type="text" name="footer" class="form-control" id="textmessage" >
                                                 <label for="footer" class="form-label">Title List</label>
