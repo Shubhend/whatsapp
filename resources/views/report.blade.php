@@ -1,7 +1,25 @@
 <x-layout-dashboard title="Contacts">
+
+<style>
+    .dt-buttons {
+        float:right !important;
+    }
+
+    .dataTables_filter{
+        float:left !important;
+    }
+
+</style>    
+
     <div class="app-content">
+       <link href="{{asset('plugins/select2/css/select2.css')}}" rel="stylesheet">
+        <link href="{{asset('https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css')}}" rel="stylesheet">
+
+        <link href="{{asset('https://cdn.datatables.net/autofill/2.4.0/css/autoFill.dataTables.min.css')}}" rel="stylesheet">
         <link href="{{asset('plugins/datatables/datatables.min.css')}}" rel="stylesheet">
-        <link href="{{asset('plugins/select2/css/select2.css')}}" rel="stylesheet">
+     
+        
+        
     
                
             
@@ -21,7 +39,7 @@
                                 </div> -->
                             </div>
                             <div class="card-body">
-                                <table id="datatable1" class="display" style="width:100%">
+                                <table id="datatable5" class="display" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>SendTo</th>
@@ -40,7 +58,7 @@
                                            {{$tag->message}}
                                             </td>
                                             <td>   {{$tag->type}}  </td>
-                                            <td>   {{$tag->created_at}}  </td>
+                                            <td>   <?php echo date_format($tag->created_at,'Y-m-d') ?>  </td>
                                             <td>
 
                                             
@@ -78,9 +96,21 @@
     </div>
    
 
-    <script src="{{asset('js/pages/datatables.js')}}"></script>
-    <script src="{{asset('js/pages/select2.js')}}"></script>
     <script src="{{asset('plugins/datatables/datatables.min.js')}}"></script>
+  
+    <script src="{{asset('https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('js/pages/select2.js')}}"></script>
     <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
+    <script src="{{asset('https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js')}}"></script>
    
+
+    <script>
+
+$('#datatable5').DataTable({
+    dom: 'Bfrtip',
+        buttons: [
+        { extend: 'csv', text: 'Download' }
+    ]
+} );
+        </script>
 </x-layout-dashboard>
