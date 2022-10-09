@@ -2,7 +2,7 @@
 <div class="app align-content-stretch d-flex flex-wrap">
     <div class="app-sidebar">
         <div class="logo">
-            <a href="{{route('homePage')}}" class="logo-icon"><span class="logo-text">WATZAPI</span></a>
+            <a href="{{route('homePage')}}" class="logo-icon"><span class="logo-text">Whatsapp Betyphon</span></a>
             <div class="sidebar-user-switcher user-activity-online">
                 <a href="/">
                     <!--img src="{{asset('images/avatars/avatar2.png')}}"-->
@@ -30,18 +30,42 @@
 
 
                 @if(Session::has('selectedDevice'))
+
+
+                <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class="material-icons-two-tone">note</i>Send Message</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                    <a href="{{route('messagetest')}}" class="">Send Message</a>
+
+                    </li>
+                    <li>
+                        <a href="{{route('campaign.lists')}}">Campaign</a>
+                    </li>
+                  
+                </ul>
+            </li>
+
+            <li class="{{request()->is('tag') ? 'active-page' : ''}}">
+                    <a href="{{route('tag')}}"><i class="material-icons-two-tone">contacts</i>Phone Book</a>
+                </li>
              
-                <li class="{{request()->is('report') ? 'active-page' : ''}}">
-                    <a href="{{route('report')}}" class=""><i class="material-icons-two-tone">note</i>Report</a>
+
+                <li class="{{request()->is('tag') ? 'active-page' : ''}}">
+                    <a href="{{route('tag')}}"><i class="material-icons-two-tone">contacts</i>Template List</a>
                 </li>
 
                 <li class="{{request()->is('autoreply') ? 'active-page' : ''}}">
                     <a href="{{route('autoreply')}}" class=""><i class="material-icons-two-tone">message</i>{{__('system.autoreply')}}</a>
                 </li>
-                
-                <li class="{{request()->is('tag') ? 'active-page' : ''}}">
-                    <a href="{{route('tag')}}"><i class="material-icons-two-tone">contacts</i>Phone Book</a>
+
+                <li class="{{request()->is('report') ? 'active-page' : ''}}">
+                    <a href="{{route('report')}}" class=""><i class="material-icons-two-tone">note</i>Report</a>
                 </li>
+
+              
+                
+             
 
                 <!--
                 <li class="{{request()->is('campaign/create') ? 'active-page' : ''}}">
@@ -49,43 +73,11 @@
                 </li>
                 -->
 
-                <li class="{{request()->is('campaigns') ? 'active-page' : ''}}">
-                    <a href="{{route('campaign.lists')}}" class=""><i class="material-icons-two-tone">history</i>Campaign</a>
-                </li>
-                <!--
-                <li class="{{request()->is('Template ') ? 'active-page' : ''}}">
-                    <a href="{{route('template')}}" class=""><i class="material-icons-two-tone">history</i>Template</a>
-                </li>
+               
 
-                -->
-                <li class="{{request()->is('message/test') ? 'active-page' : ''}}">
-                    <a href="{{route('messagetest')}}" class=""><i class="material-icons-two-tone">note</i>Send Message</a>
-                </li>
-                @endif
-                <li class="{{request()->is('rest-api') ? 'active-page' : ''}}">
-                    <a href="{{route('rest-api')}}"><i class="material-icons-two-tone">api</i>{{__('system.restapi')}}</a>
-                </li>
-                 <li class="{{request()->is('user/change-password') ? 'active-page' : ''}}">
-                    <a href="{{route('changePassword')}}"><i class="material-icons-two-tone">settings</i>Setting</a>
-                </li>
               
-                {{-- <li class="{{request()->is('schedule') ? 'active-page' : ''}}">
-                    <a href="{{route('scheduleMessage')}}" class=""><i class="material-icons-two-tone">schedule</i>Schedule Message</a>
-                </li> --}}
-                {{-- only level admin --}}
-                @if(Auth::user()->level == 'admin')
-                <li class="sidebar-title">
-                    Admin Menu
-                </li>
-
-                <li class="{{request()->is('settings') ? 'active-page' : ''}}">
-                    <a href="{{route('settings')}}"><i class="material-icons-two-tone">settings</i>Setting Server</a>
-                </li>
-                <li class="{{request()->is('admin/manage-user') ? 'active-page' : ''}}">
-                    <a href="{{route('admin.manageUser')}}"><i class="material-icons-two-tone">people</i>User Manager</a>
-                </li>
                 @endif
-                
+            
                 <li>
                     <form action="{{route('logout')}}" method="POST">
                         @csrf
@@ -113,34 +105,53 @@
                                 <a class="nav-link hide-sidebar-toggle-button" href="#"><i class="material-icons">first_page</i></a>
                             </li>
 
-                            <li class="nav-item">
+                          
+                        </ul>
+
+                    </div>
+
+                
+                    <div class="d">
+
+
+                    <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+    User Profile 
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+  <li><a class="dropdown-item" href="{{route('changePassword')}}">Change Password</a></li>
+                                        <li><a class="dropdown-item" href="{{route('rest-api')}}">Api</a></li>
+                                        
+                                        <li>
                                 <a class="nav-link hide-sidebar-toggle-button" href="{{route('file-manager')}}" class="">{{__('File Manager')}}</a>
                             </li>
                            
-                        </ul>
-
-                    </div>
-                    <div class="d-flex">
-                       
-                        <ul class="navbar-nav">
-                         
-                      
-
-                            <li class="nav-item hidden-on-mobile">
                                  
-                                    <form action="{{route('logout')}}" method="POST">
+                                        @if(Auth::user()->level == 'admin')
+             
 
-                                    @csrf
-                                   <button type="submit" class="dropdown-header h6 " style="border: 0; background-color :white;">Logout</button>
-                                    
-                                    </form>
-                                       
-                                    <!--- <a href={{route('user.changePassword')}} class="dropdown-header h6" style="border: 0; background-color :white;">Setting</a>
-               
--->
-                            </li>
-                        </ul>
-                    </div>
+                <li>
+                    <a class="dropdown-item"  href="{{route('settings')}}">Setting Server</a>
+                </li>
+                <li class="">
+                    <a class="dropdown-item"   href="{{route('admin.manageUser')}}">User Manager</a>
+                </li>
+                @endif
+
+
+
+
+                                        <li><form action="{{route('logout')}}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item" >Logout</button></li>
+                                        </form>
+                                         </li>
+
+
+
+  </ul>
+</div>
+
                 </div>
             </nav>
         </div>

@@ -42,6 +42,26 @@
     @enderror   
 </div>
 
+<div class="mb-2">
+    <label for="email" class="form-label">Company</label>
+    <input type="text" id="email" name="company" class="form-control" value="{{old('company')}}"  id="email"  placeholder="Betyphon">
+    @error('company')
+    <div class="form-text text-danger">{{$message}}</div>
+    @enderror   
+</div>
+
+
+<div class="mb-2">
+    <label for="contact" class="form-label">Contact No.</label>
+    <input type="number" id="email" name="contact" class="form-control" value="{{old('contact')}}"  id="email"  placeholder="9811XXXX">
+    @error('contact')
+    <div class="form-text text-danger">{{$message}}</div>
+    @enderror   
+</div>
+
+
+
+
     
                     <label for="password" class="form-label">Password</label>
                     <input type="password" name="password" class="form-control" id="password" aria-describedby="signUpPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">

@@ -88,6 +88,7 @@ const wa = require(_0xaa9022(0x1e8)),
             'message': _0x686ae3(0x1e0)
         });
     }, sendMedia = async (_0x5c4314, _0xab223f) => {
+      
         const _0x69f2b5 = _0xaa9022,
             {
                 token: _0x2e6d5e,
@@ -97,6 +98,9 @@ const wa = require(_0xaa9022(0x1e8)),
                 fileName: _0x524af9,
                 caption: _0x5c20c1
             } = _0x5c4314['body'];
+
+         
+
         if (_0x2e6d5e && _0x4f15e3 && _0x5e3cb3 && _0x5a2547 && _0x5c20c1) {
             let _0x3241ac = await wa[_0x69f2b5(0x1f6)](_0x2e6d5e, formatReceipt(_0x4f15e3));
             if (!_0x3241ac) return _0xab223f[_0x69f2b5(0x1f3)]({
@@ -113,6 +117,7 @@ const wa = require(_0xaa9022(0x1e8)),
                 'message': _0x69f2b5(0x1f4)
             });
         }
+      
         _0xab223f[_0x69f2b5(0x1f3)]({
             'status': ![],
             'message': _0x69f2b5(0x1e0)
@@ -128,7 +133,7 @@ const wa = require(_0xaa9022(0x1e8)),
                 image: _0x2109d2
             } = _0x54f576[_0x291de6(0x1e7)],
             _0x4f6ba6 = JSON[_0x291de6(0x1ff)](_0x2a4c87);
-        if (_0x382b5a && _0x1fa3bb && _0x2a4c87 && _0x5e565a && _0x5007df) {
+        if (_0x382b5a && _0x1fa3bb && _0x2a4c87 && _0x5e565a ) {
             let _0x5f4504 = await wa['isExist'](_0x382b5a, formatReceipt(_0x1fa3bb));
             if (!_0x5f4504) return _0x125ab4['send']({
                 'status': ![],
@@ -158,7 +163,7 @@ const wa = require(_0xaa9022(0x1e8)),
                 footer: _0x4c4d55,
                 image: _0x1d4569
             } = _0x388bfd['body'];
-        if (_0x2c579f && _0x13e92d && _0x4e165f && _0x53aa7b && _0x4c4d55) {
+        if (_0x2c579f && _0x13e92d && _0x4e165f && _0x53aa7b ) {
             let _0x2546ef = await wa[_0x312a9d(0x1f6)](_0x2c579f, formatReceipt(_0x13e92d));
             if (!_0x2546ef) return _0x3dabd2[_0x312a9d(0x1f3)]({
                 'status': ![],
@@ -189,7 +194,7 @@ const wa = require(_0xaa9022(0x1e8)),
                 title: _0x3406f7,
                 buttonText: _0x547665
             } = _0x577f6e['body'];
-        if (_0x230433 && _0x2c91fe && _0x3e9171 && _0x567631 && _0x5bc5c1 && _0x3406f7 && _0x547665) {
+        if (_0x230433 && _0x2c91fe && _0x3e9171 && _0x567631  && _0x3406f7 && _0x547665) {
             let _0x1ea895 = await wa[_0x19ddd8(0x1f6)](_0x230433, formatReceipt(_0x2c91fe));
             if (!_0x1ea895) return _0x8329e8[_0x19ddd8(0x1f3)]({
                 'status': ![],

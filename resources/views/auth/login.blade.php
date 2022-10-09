@@ -7,7 +7,7 @@
         </div>
         <div class="app-auth-container">
             <div class="logo">
-                <a href="/">WAPP</a>
+                <a href="/">Whatsapp Betyphon</a>
             </div>
            @if (session()->has('alert'))
               <x-alert>

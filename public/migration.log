@@ -1,0 +1,3 @@
+ALTER TABLE `users`  ADD `company` VARCHAR(222) NULL  AFTER `password`,  ADD `contact` VARCHAR(222) NULL  AFTER `company`;
+
+

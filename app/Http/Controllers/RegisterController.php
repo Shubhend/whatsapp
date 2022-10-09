@@ -26,6 +26,8 @@ class RegisterController extends Controller
                 'email' => $request->email,
                 'password' => bcrypt($request->password),
                 'api_key' => '',
+                'company' => $request->company,
+                'contact' =>$request->contact,
                 'chunk_blast' => 1000000
 
             ]
